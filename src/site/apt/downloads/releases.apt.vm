@@ -1,0 +1,30 @@
+~~Generado con el arquetipo: standalone-arquetipo
+~~http://pimpam.googlecode.com
+ -----
+ Releases
+ -----
+ carlosg@tid.es
+ -----
+
+
+Releases
+~~~~~~~~
+
+ En la siguiente tabla se muestran algunas versiones del componente:
+
+*----------*--------------+----------------+----------------+----------------+
+| Versión  | Binarios     | Fuentes        | JavaDoc        | SVN 
+*----------*--------------+----------------+----------------+----------------+
+| {{{../changes-report.html#a0.0.1}0.0.1}} | {{{$project.distributionManagement.repository.url/$project.groupId.replace(".","/")/${project.artifactId}/0.0.1/${project.artifactId}\-0.0.1\.${project.packaging}}0.0.1}} | {{{$project.distributionManagement.repository.url/$project.groupId.replace(".","/")/${project.artifactId}/0.0.1/${project.artifactId}\-0.0.1\-sources.jar}0.0.1}} | {{{$project.distributionManagement.repository.url/$project.groupId.replace(".","/")/${project.artifactId}/0.0.1/${project.artifactId}\-0.0.1\-javadoc.jar}0.0.1}} | {{{https://reposbcn.hi.inet/repositorio/ComMovistarCMovil/desarrollos/Middleware/tags/${project.artifactId}\-0.0.1/}0.0.1}} 
+*----------*--------------+----------------+----------------+----------------+
+ 
+  Descárgate {{{${project.distributionManagement.repository.url}/$project.groupId.replace( ".", "/" )/${project.artifactId}}aquí}} las diferentes versiones de <<$project.artifactId>>.
+  
+  La descripción de cada uno de las releases se encuentra {{{../changes-report.html}aquí}}. 
+  
+  Para ver los últimos cambios introducidos pulse {{{../changelog.html}aquí}}
+
+    
+  
+
+  

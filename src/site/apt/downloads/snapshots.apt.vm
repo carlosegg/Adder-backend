@@ -1,0 +1,22 @@
+~~Generado con el arquetipo: standalone-arquetipo
+~~http://pimpam.googlecode.com
+ -----
+ Snapshots
+ -----
+ carlosg@tid.es
+ -----
+
+ 
+
+Snapshots
+~~~~~~~~
+
+ Descárgate {{{${project.distributionManagement.repository.url}/$project.groupId.replace( ".", "/" )/${project.artifactId}}aquí}} las diferentes versiones de snapshots de <<$project.artifactId>>.
+  
+  La descripción de cada uno de las releases se encuentra {{{../changes-report.html}aquí}}. 
+  
+  Para ver los últimos cambios introducidos pulse {{{../changelog.html}aquí}}
+    
+  
+
+  

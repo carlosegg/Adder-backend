@@ -1,0 +1,17 @@
+~~Generado con el arquetipo: standalone-archetype
+~~http://pimpam.googlecode.com
+ -----
+ Guía del desarrollador de ${project.artifactId} - ${project.version}
+ -----
+ carlosg@tid.es
+ -----
+
+
+Guía del desarrollador de <<${project.artifactId}>>
+~~~~~~~~~~~~
+  
+  El desarrollo de <<${project.artifactId}>> ha de cumplir los requisitos definidos en la 
+    {{{../../${groupIdArchetypes}/${standaloneArchetype}/developerGuide.html}guía del desarrollador}} del 
+ {{{../../${groupIdArchetypes}/${standaloneArchetype}}${standaloneArchetype}}}
+  
+  

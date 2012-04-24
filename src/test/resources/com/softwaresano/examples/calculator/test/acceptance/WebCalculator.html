@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+    <head>
+        <title> Sumadora Web </title>
+        <link href="../../../../../../concordion.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Sumadora Web</h1>
+        <p>
+            Cuando el usuario introduce los dos sumandos(números naturales de hasta 4 cifras)
+            y hace click sobra el botón de sumar,se calcula la suma. El resultado debería ser también
+            un número de 4 cifras como máximo.
+        </p>
+        <p>
+            Si alguno de los sumandos no son números naturales, la sumadora ha de devolver el mensaje de error:
+            <b>ERROR: Los dos sumandos han de ser números naturales de hasta 4 cifras</b>
+        </p>
+
+        <p>
+            Si la suma de los dos números naturales es un número natural mayor de 4 cifras. La sumadura ha de devolver:
+            <b>ERROR: OVERFLOW</b>
+        </p>
+
+        <div class="example">
+            <h3>Ejemplos de suma</h3>
+            <table concordion:execute="#result = add(#firstOperand,
+                   #secondOperand, #addResult )">
+                <tr>
+                    <th concordion:set="#firstOperand">Primer sumando</th>
+                    <th concordion:set="#secondOperand">Segundo sumando</th>
+                    <th concordion:set="#addResult">Suma</th>
+                    <th concordion:assertEquals="#result">Resultado</th>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>2</td>
+                    <td>3 + 2 = 5</td>
+                    <td>OK</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>1 + 0 = 1</td>
+                    <td>OK</td>
+                </tr>
+                <tr>
+                    <td>-1</td>
+                    <td>2</td>
+                    <td>ERROR: Los dos sumandos han de ser números naturales de hasta 4 cifras</td>
+                    <td>OK</td>
+                </tr>
+		<tr>
+                    <td></td>
+                    <td>2</td>
+                    <td>ERROR: Los dos sumandos han de ser números naturales de hasta 4 cifras</td>
+                    <td>OK</td>
+                </tr>
+		<tr>
+                    <td>1</td>
+                    <td></td>
+                    <td>ERROR: Los dos sumandos han de ser números naturales de hasta 4 cifras</td>
+                    <td>OK</td>
+                </tr>
+		<tr>
+                    <td></td>
+                    <td></td>
+                    <td>ERROR: Los dos sumandos han de ser números naturales de hasta 4 cifras</td>
+                    <td>OK</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>-2</td>
+                    <td>ERROR: Los dos sumandos han de ser números naturales de hasta 4 cifras</td>
+                    <td>OK</td>
+                </tr>
+                <tr>
+                    <td>-1</td>
+                    <td>-2</td>
+                    <td>ERROR: Los dos sumandos han de ser números naturales de hasta 4 cifras</td>
+                    <td>OK</td>
+                </tr>
+                <tr>
+                    <td>a</td>
+                    <td>-2</td>
+                    <td>ERROR: Los dos sumandos han de ser números naturales de hasta 4 cifras</td>
+                    <td>OK</td>
+                </tr>
+                <tr>
+                    <td>-2</td>
+                    <td>a</td>
+                    <td>ERROR: Los dos sumandos han de ser números naturales de hasta 4 cifras</td>
+                    <td>OK</td>
+                </tr>
+                <tr>
+                    <td>a</td>
+                    <td>-b</td>
+                    <td>ERROR: Los dos sumandos han de ser números naturales de hasta 4 cifras</td>
+                    <td>OK</td>
+                </tr>
+                <tr>
+                    <td>2.1</td>
+                    <td>3</td>
+                    <td>ERROR: Los dos sumandos han de ser números naturales de hasta 4 cifras</td>
+                    <td>OK</td>
+                </tr>
+                <tr>
+                    <td>10000</td>
+                    <td>3</td>
+                    <td>ERROR: Los dos sumandos han de ser números naturales de hasta 4 cifras</td>
+                    <td>OK</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>10000</td>
+                    <td>ERROR: Los dos sumandos han de ser números naturales de hasta 4 cifras</td>
+                    <td>OK</td>
+                </tr>
+                <tr>
+                    <td>10000</td>
+                    <td>10000</td>
+                    <td>ERROR: Los dos sumandos han de ser números naturales de hasta 4 cifras</td>
+                    <td>OK</td>
+                </tr>
+                 <tr>
+                    <td>3000</td>
+                    <td>9000</td>
+                    <td>ERROR: OVERFLOW</td>
+                    <td>OK</td>
+                </tr>
+            </table>
+        </div>
+          <br/>
+        <a href="Calculator.html">Pruebas de aceptación para la sumadora(Applicación standalone)</a>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generado con el arquetipo standalone-archetype 
+     de http://pimpam.googlecode.com/
+ -->
+<!-- Cada vez que se añada una nueva funcionalidad al proyecto se ha de 
+     reflejar en este fichero. Este fichero será utilizado tanto para generar 
+     las RELEASE_NOTES como para generar el informe de los últimos cambios
+     que es accesible a través del site del proyecto
+     
+     La configuración del changes.xml está disponible en:
+     http://maven.apache.org/plugins/maven-changes-plugin/changes.html
+-->
+<document>
+  <properties>
+    <title>Release Notes</title>
+    <author email="carlosg@tid.es">Carlos E. Gómez</author>
+  </properties>
+  <body>
+  	<release version="0.0.3" date="2012-02-20" description="Updating plugins">
+    </release>
+    <release version="0.0.2" date="2012-02-20" description="Updating plugins">
+    </release>
+    <release version="0.0.1" date="2009-01-10" description="Initial Release">
+      <action dev="carlosg" type="add">
+         Suma dos operandos
+      </action>
+      <!-- action dev="aramirez" type="fix" issue="MPJIRA-11">
+        Enable retrieving component-specific issues.
+      </action>
+      <action dev="jruiz" type="remove" due-to="Allan Ramirez" due-to-email="aramirez@exist.com">
+        The element type " link " must be terminated by the matching end-tag.
+        Deleted the erroneous code.
+      </action -->
+    </release>
+  </body>
+</document>

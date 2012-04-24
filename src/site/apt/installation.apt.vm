@@ -1,0 +1,135 @@
+~~Generado con el arquetipo: standalone-archetype
+~~http://pimpam.googlecode.com
+ -----
+ Instalación 
+ -----
+ ${userName}
+ -----
+ 
+ 
+
+Instalación
+~~~~~~~~~~~
+ <<${project.artifactId}>> es una librería  que podría ser agregada para {{{useSample.html}construir una aplicación}}.
+ Para la instalación de la librería se partirá de los ficheros fuentes.
+
+* Requisitos Previos
+~~~~~~~~~~~~~~~~~~~
+
+  Para ejecutar <<${project.artifactId}>> es necesario tener instalado
+
+  ** {{{http://java.sun.com/javase/downloads/index.jsp}Java 6}}.
+   
+  ** {{{http://maven.apache.org}Maven 2.0.10+}} en el caso de que se quiera generar el componente a partir de los fuentes.
+  
+  ** {{{./dependencies.html}Dependencias de otras librerias}}
+
+* Descargar fuentes
+~~~~~~~~~~~~~~~~~~~
+  Se descargan las fuentes del  {{{./source-repository.html}repositorio}}.
+  
++-----+
+ngsn@triatlon:~/workspace$ svn co $project.scm.connection.replaceAll("scm:svn:","") ${project.artifactId}
+ngsn@triatlon:~/workspace$ cd ${project.artifactId}
++-----+
+  
+* Revisión fichero configuración 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  Antes de realizar la instalación hay que revisar que todas las propiedades de configuracion son correctas. En la siguiente tabla se muestran los ficheros de configuracion en funcion del entorno
+  
+*----------+-------------+
+| <<Entorno>> |  <<Fichero>> 
+*----------+-------------+
+| Desarrollo |  {{{$project.scm.connection.replace("scm:svn:","")/src/main/filters/development.properties}development.properties}}
+*----------+-------------+
+| Integración | {{{$project.scm.connection.replace("scm:svn:","")/src/main/filters/integration.properties}integration.properties}}
+*----------+-------------+
+| Producción |  {{{$project.scm.connection.replace("scm:svn:","")/src/main/filters/production.properties}production.properties}}
+*----------+-------------+
+  
+    
+* Instalación a partir de los fuentes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+  En el directorio donde se han descargado los fuentes
+  
++-----+
+ngsn@triatlon:~/workspace$ cd ${project.artifactId}
+ngsn@triatlon:~/workspace/${project.artifactId}$ mvn clean install -P${entorno}
++-----+
+
+  Donde <<$\{entorno\}>> es development, integration o production. 
+
+  Como resultado de la ejecución del comando anterior se han generado los tres ficheros siguientes:
+  
+  * {{{./assemblies/${project.artifactId}-${project.version}-bin.tar.gz}${project.artifactId}-${project.version}-bin.tar.gz}}
+  
+  * {{{./assemblies/${project.artifactId}-${project.version}-bin.tar.bz2}${project.artifactId}-${project.version}-bin.tar.bz2}}
+  
+  * {{{./assemblies/${project.artifactId}-${project.version}-bin.zip}${project.artifactId}-${project.version}-bin.tar.bz2}}
+  
+ 
+ Pulse {{{./assemblies/}aquí}} para ver las diferentes versiones.
+ 
+* Instalación binarios
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Descomprimir cualquiera de los tres ficheros generados(*.tar.gz, *.zip.*.bz) durante la fase de assembly
+ en el directorio deseado y leer el fichero README para saber cuáles son los pasos para poner en funcionamiento el proyecto.
+
++----------+
+ngsn@triatlon:~/app$  gunzip -c ${project.artifactId}-${project.version}-bin.tar.gz | tar xvf - 
+ngsn@triatlon:~/app$  cd ${project.artifactId}-${project.version}
+ngsn@triatlon:~/app/${project.artifactId}-${project.version}$ cat README
++----------+
+  
+ Revisar la configuración de la aplicación
+
++----------+ 
+ngsn@triatlon:~/app/${project.artifactId}-${project.version}$ cd conf
+ngsn@triatlon:~/app/${project.artifactId}-${project.version}/conf$ more main.properties 
+ngsn@triatlon:~/app/${project.artifactId}-${project.version}/conf$ more log4j.properties
++----------+
+
+ Si la configuración es correcta, cambiar la directorio bin y 
+ ejecutar el script <./startup.bat> (entornos Windows) o <./startup.sh> (entornos linux/unix/leopard). 
+
++----------+
+ngsn@triatlon:~/app/${project.artifactId}-${project.version}$ cd bin
+ngsn@triatlon:~/app/bin$ ./startup.sh 
++----------+
+
+ Si no se hacen alteraciones  en el classpath de la aplicación también se puede ejecutar directamente el jar generado
+
++----------+
+ngsn@triatlon:~/app/${project.artifactId}-${project.version}/bin$ cd ..
+ngsn@triatlon:~/app/${project.artifactId}-${project.version}$ java -jar ${project.artifactId}-${project.version}.jar
++----------+
+
+ El fichero generado por el assembly al descomprimirlo sigue la estructura siguiente:   
+
++----------+
+.
+|-- LICENSE       --> Fichero de licencia bajo el que se distribuye este software
+|-- README        --> Descripción necesaria para poner en funcionamiento el componente
+|-- RELEASE_NOTES --> Listado de todas las funcionalidades y errores corregidos en cada versión
+|-- bin
+|   |-- bootstrap.bat --> Script de arranque/parada del componente en entornos Windows
+|   |-- bootstrap.sh  --> Script de arranque/parada del componente en entornos Linux/Unix/Leopard  
+|   |-- install.bat   --> Script de instalación del componente en entornos Windows
+|   |-- install.sh    --> Script de instalación del componente en entornos Linux/Unix/Leopard
+|   |-- shutdown.bat  --> Script de parada del componente en entornos Windows
+|   |-- shutdown.sh   --> Script de parada del componente en entornos Linux/Unix/Leopard 
+|   |-- startup.bat   --> Script de arranque del componente en entornos Windows
+|   |-- startup.sh    --> Script de arranque del componente en entornos Linux/Unix/Leopard
+|   |-- uninstall.bat --> Script de desinstalación del componente en entornos Windows
+|   `-- uninstall.sh  --> Script de desinstalación del componente en entornos Linux/Unix/Leopard
+|-- ${project.artifactId}-${project.version}.jar  --> Clases del proyecto
+|-- conf
+|   |-- log4j.xml       --> Configuración de la trazas con log4j
+|   `-- main.properties --> Propiedades configurables del proyecto
+`-- lib
+    |-- commons-logging-1.1.1.jar --> Wrapper para trazas (java.util.logging y log4j)
+    `-- log4j-1.2.15.jar          --> Librería de trazas
++----------+
+
+ 

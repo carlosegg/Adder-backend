@@ -1,0 +1,17 @@
+~~Generado con el arquetipo: standalone-archetype
+~~http://pimpam.googlecode.com
+ -----
+ Compilación ${project.artifactId}
+ -----
+ ${developerName} -- ${developerMail}
+ -----
+
+
+Compilación
+~~~~~~~~~~~
+ <<${project.artifactId}>> es un componente que puede ser incluido para construir una aplicación. En el {{{./useSample.html}ejemplo de uso}} se detalla como se realiza la compilación.
+    
+  
+
+
+ 

@@ -1,0 +1,61 @@
+~~Generado con el arquetipo: standalone-archetype
+~~http://pimpam.googlecode.com
+ -----
+ ${project.artifactId}  ${project.Version}
+ -----
+ ${userName}
+ -----
+ 
+
+${project.artifactId}
+~~~~~~~~~~~~
+  
+  La <<${project.artifactId}>> es un pequeño ejemplo donde se aplican algunas buenas prácticas durante ciclo de desarrollo de un proyecto. Estas buenas prácticas son:
+    
+  
+  * Desarrollo basado en interfaces
+  
+  * Desarrollo conducido por pruebas (Test Driven Development)
+  
+  * Integración contínua
+  
+  * Objetos Mock
+  
+  * Instalación en diferentes entornos (desarrollo, integración, producción)
+
+  * Pruebas de aceptación automáticas utilizando {{{http://concordion.org/}concordion}} y {{{http://seleniumhq.org/}selenium}} , basadas en la {{{./concordion//com/softwaresano/examples/calculator/test/acceptance/WebCalculator.html}especificación de requisitos}} de esta aplicación.
+  
+  
+  Este ejemplo de proyecto se genera con el arquetipo {{{../../${groupIdArchetypes}/${standaloneArchetype}}${standaloneArchetype}}}
+  de la siguiente forma:
+  
++-----+  
+ngsn@triatlon:~/workspace$ mvn -DarchetypeGroupId=${groupIdArchetypes} -DarchetypeArtifactId=${standaloneArchetype} \
+      -DarchetypeVersion=${archetypeVersion} \
+      -DgroupId=${project.groupId} -DartifactId=${project.artifactId} -Dversion=${project.version} \
+      -Dpackage=${project.groupId}.${project.artifactId} -DinteractiveMode=false archetype:generate
++-----+
+
+  donde:
+   
+   * <<$\{archetypeVersion\}>>: Se sustituye por la versión del arquetipo que se utilizará. 
+   Ver las últimas versiones en:  {{{../../${groupIdArchetypes}/${standaloneArchetype}/downloads/releases.html}releases}} 
+   y {{{../../${groupIdArchetypes}/${standaloneArchetype}/downloads/snapshots.html}snapshots}} 
+   
+
+* Documentación
+~~~~~~~~~~~~~~~~
+  
+  ** {{{./apidocs/index.html}JavaDocs}} de ${project.artifactId}
+  
+  ** {{{./useSample.html}Guía de usuario}}
+  
+  
+* {{{changes-report.html}Releases}}
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	En {{{changes-report.html}Releases}} está la descripción de cada una de las releases, para descargarse una release pulsa {{{downloads/releases.html}aquí}}, y {{{downloads/snapshots.html}aquí}} para descargarse una snapshot.
+	
+	
+	
+

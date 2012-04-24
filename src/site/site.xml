@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Generado con el arquetipo: standalone-archetype
+    http://www.softwaresano.com
+-->
+<project name="web-calculator">
+	<poweredBy>
+		<logo name="pimpam" href="http://pimpam.googlecode.com/"
+		      img="http://pimpam.googlecode.com/files/builtByPimpam.png" />
+	</poweredBy>
+	<bannerLeft>
+	    <name>web-calculator</name>
+		<src>${project.url}/img/logo.png</src>
+		<href>http://www.softwaresano.com</href>
+	</bannerLeft>
+	<bannerRight>
+		<src>http://pimpam.googlecode.com/files/builtByPimpam.png</src>
+		<href>http://www.softwaresano.com</href>
+	</bannerRight>
+      <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-default-skin</artifactId>
+    <version>1.0</version>
+  </skin>
+    
+    <body>
+        <links>
+            <item name="Normas de desarrollo" href="developerGuide.html" />
+            <item name="Arquetipo b&aacute;sico"
+                href="${repoPublicSiteUrl}/${groupIdArchetypes}/${standaloneArchetype}/index.html" />
+            <item name="Repositorios de maven"
+                href="${repoPublicSiteUrl}/${groupIdArchetypes}/${standaloneArchetype}/maven-repositories.html" />
+        </links>
+        <menu name="Descargas">
+            <item name="Releases" href="downloads/releases.html" />
+            <item name="Snapshot" href="downloads/snapshots.html" />
+            <item name="Release Notes" href="changes-report.html" />
+            <item name="Licencia" href="license.html" />
+        </menu>
+        <menu name="web-calculator">
+            <item name="Introducci&oacute;n" href="index.html" />
+            <item name="Instalaci&oacute;n" href="installation.html" />
+            <item name="Compilaci&oacute;n" href="compilation.html" />
+            <item name="Ejemplo de uso" href="useSample.html" />
+        </menu>
+        <menu name="Desarrollo">
+            <item name="Fuentes" href="source-repository.html" />
+            <item name="Integraci&oacute;n continua" href="integration.html" />
+            <item name="Control de cambios" href="changelog.html" />
+            <item name="Guía del desarrollador" href="developerGuide.html" />
+            <item name="Pruebas de aceptación" href="concordion/com/softwaresano/examples/calculator/test/acceptance/WebCalculator.html" />
+        </menu>
+        <menu ref="reports" />
+        <menu ref="parent" />
+        <menu ref="modules" />
+    </body>
+</project>

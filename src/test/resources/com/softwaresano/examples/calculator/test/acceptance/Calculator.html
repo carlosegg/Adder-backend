@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+    <head>
+        <title> Sumadora</title>
+        <link href="../../../../../../concordion.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>Sumadora</h1>
+        <p>
+            Cuando el usuario introduce los dos sumandos(números naturales de hasta 4 cifras)
+            se calcula la suma. El resultado debería ser también un número de 4 cifras como máximo.
+        </p>
+
+        <p>
+            Si alguno de los sumandos no son números naturales, la sumadora ha de devolver el mensaje de error:
+            <b>ERROR: Los dos sumandos han de ser números naturales de hasta 4 cifras</b>
+        </p>
+
+        <p>
+            Si la suma de los dos números naturales es un número natural mayor de 4 cifras. La sumadura ha de devolver:
+            <b>ERROR: OVERFLOW</b>
+        </p>
+        
+        <div class="suma">
+            <h3>Ejemplos de suma</h3>
+            <p>
+                Cuando el usuario introduce como primer sumando un <b concordion:set="#a">3</b>
+                y como segundo sumando un <b concordion:set="#b">2</b>. El resultado debe ser:
+                <b concordion:assertEquals="add(#a,#b)">3 + 2 = 5</b>
+            </p>
+            <p>
+                Cuando el usuario introduce como primer sumando un número negativo <b concordion:set="#a">-1</b>
+                y como segundo sumando un <b concordion:set="#b">2</b>
+                <b concordion:assertEquals="add(#a,#b)">ERROR: Los dos sumandos han de ser números naturales de hasta 4 cifras</b>
+            </p>
+            <p>
+                Cuando el usuario introduce como primer sumando un número negativo <b concordion:set="#a">-1</b>
+                y como segundo sumando otro numero negativo <b concordion:set="#b">-2</b>. El resultado debe ser:
+                <b concordion:assertEquals="add(#a,#b)">ERROR: Los dos sumandos han de ser números naturales de hasta 4 cifras</b>
+            </p>
+
+            <p>
+                Cuando el usuario introduce como primer sumando <b concordion:set="#a">1</b>
+                y como segundo sumando un número negativo <b concordion:set="#b">-2</b> El resultado debe ser:
+                <b concordion:assertEquals="add(#a,#b)">ERROR: Los dos sumandos han de ser números naturales de hasta 4 cifras</b>
+            </p>
+            <p>
+                Cuando el usuario introduce como primer sumando <b concordion:set="#a">10000</b>
+                y como segundo sumando un número negativo <b concordion:set="#b">2</b> El resultado debe ser:
+                <b concordion:assertEquals="add(#a,#b)">ERROR: Los dos sumandos han de ser números naturales de hasta 4 cifras</b>
+            </p>
+
+            <p>
+                Cuando el usuario introduce como primer sumando <b concordion:set="#a">a</b>
+                y como segundo sumando un número negativo <b concordion:set="#b">-2</b> El resultado debe ser:
+                <b concordion:assertEquals="add(#a,#b)">ERROR: Los dos sumandos han de ser números naturales de hasta 4 cifras</b>
+            </p>
+        </div>
+        <br/>
+        <a href="WebCalculator.html">Pruebas de aceptación para la Sumadora-Web</a>
+    </body>
+</html>
