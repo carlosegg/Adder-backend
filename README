@@ -1,0 +1,129 @@
+
+                 ========================================
+				Adder Backend
+                 ========================================
+                 
+1. Introducción
+================
+Esta aplicación implementa una sumadora web de números positivos hasta 4 cifras. Este ejemplo demuestra la ejecución tests de aceptación utilizando concordion y selenium2.
+
+2. Construcción
+===============
+2.1 Requisitos Previos
+======================
+Java 1.6 ó superior
+Maven 2.2.1 ó superior
+
+2.2 Tests 
+==========
+Esta aplicación tiene tanto tests unitarios, como tests de aceptación.
+mvn clean tests --> tests unitarios
+mvn clean integration-test --> test de integración (aceptación) ejecutados por defecto contra un firefox en local
+mvn clean integration-test -DargLine="-Dselenium.host=ironman1  -Dselenium.port=4445 -Dselenium.browser.name=firefox"
+ --> test de integración (aceptación) ejecutados contra un selenium grid
+  
+3. Instalación
+================
+ 
+3.1 Requisitos Previos
+======================
+Java 1.6 o superior
+Tomcat 6 o superior
+
+3.2 Instalación de la aplicación
+================================
+ Una vez arrancado tomcat copiar al directorio $TOMCAT_HOME/webapps el fichero web-calculator.war que se ha generado 
+en el directorio target/web-calculator.war.
+
+ También se ha generado un rpm con la aplicación web-calculator (Mirar más abajo)
+
+4. Ejecución
+============
+Cuando el war se ha desplegado completamente se puede acceder a la aplicación de la siguiente forma
+
+http://maquina:puerto/web-calculator/index.html
+
+5. Documentación
+================
+Toda la documentación del proyecto está disponible en ${repoPublicSiteUrl}/${project.groupId}/${project.artifactId}
+
+
+6. Desarrollo
+=============
+
+6.1 Tests de aceptación
+==================================
+
+6.1.1 Definición
+================
+   http://pimpam.googlecode.com/svn/trunk/web-calculator/src/test/resources/com/softwaresano/examples/calculator/test/acceptance/WebCalculator.html
+6.1.2 Implementación de los tests
+=================================
+  http://pimpam.googlecode.com/svn/trunk/web-calculator/src/test/java/com/softwaresano/examples/calculator/test/acceptance/WebCalculator.java
+
+6.2 Tests Unitarios
+===================
+  http://pimpam.googlecode.com/svn/trunk/web-calculator/src/test/java/com/softwaresano/examples/calculator/test/Component.java
+
+6.3 Implementación
+==================
+
+6.3.1 Implementación librería
+=============================
+  http://pimpam.googlecode.com/svn/trunk/web-calculator/src/main/java/com/softwaresano/examples/calculator/Calculator.java
+  http://pimpam.googlecode.com/svn/trunk/web-calculator/src/main/java/com/softwaresano/examples/calculator/impl/Calculator.java
+  
+6.3.2 Implementación Capa Web
+=============================
+  Frontend
+  	 http://pimpam.googlecode.com/svn/trunk/web-calculator/src/main/webapp/index.html
+  
+  Backend
+  	  http://pimpam.googlecode.com/svn/trunk/web-calculator/src/main/webapp/WEB-INF/web.xml
+      http://pimpam.googlecode.com/svn/trunk/web-calculator/src/main/java/com/softwaresano/examples/calculator/web/Calculator.java
+  
+  
+6.4 Empaquetado
+===============
+6.4.1 Empaquetado war
+=====================
+   http://pimpam.googlecode.com/svn/trunk/web-calculator/pom.xml --> 	<packaging>war</packaging>
+
+6.4.2 Empaquetado rpm
+=====================
+    http://pimpam.googlecode.com/svn/trunk/web-calculator/pom.xml --> <artifactId>rpm-maven-plugin</artifactId>
+    http://pimpam.googlecode.com/svn/trunk/web-calculator/src/main/rpm/scripts/ 
+
+6.5 Instalación (Via rpm)
+===============
+    En una máquina centos añadir el repositorio donde se ha desplegado el rpm (http://develenv.softwaresano.com/repositories.html#Repositorios_de_paquetes_Redhat_CentOS_RedHat_y_Fedora)
+    yum install web-calculator
+    
+6.6 Acceso a la aplicación instalada
+====================================
+    http://develenv:8080/web-calculator
+    
+7.0 Integración continua con develenv
+=====================================
+    Este ejemplo ya viene instalado con develenv (http://develenv.softwaresano.com/samples.html). 
+    Además las pruebas de aceptación se ejecutan tanto en Firefox como en GoogleChrome, Esto se puede ver en el ejemplo SeleniumGridExample
+
+8.0 Buenas prácticas en desarrollo de proyectos java
+====================================================
+    Para el desarrollo de este ejemplo se han seguido las buenas prácticas descritas en http://pimpam.googlecode.com/svn/site/standalone-archetype/developerGuide.html
+    
+
+    
+    
+    
+    
+    
+   
+    
+    
+
+    
+    
+  
+  
+  
